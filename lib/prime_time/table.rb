@@ -16,12 +16,17 @@ module PrimeTime
     def to_s
       table_string = ""
       table_string << "x #{self.col_headers.join(' ')}\n"
-      
+
       self.rows.each_with_index do |r, i|
-        table_string << "#{self.row_headers[i]} #{r.join(' ')}\n"
+        table_string << row_string(r, i)
       end
 
       table_string.strip
+    end
+
+    private
+    def row_string(row, index)
+      "#{self.row_headers[index]} #{row.join(' ')}\n"
     end
 
   end
