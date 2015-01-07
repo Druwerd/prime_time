@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = PrimeTime::VERSION
   spec.authors       = ["Dru Ibarra"]
   spec.email         = ["Druwerd@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Prints out a multiplication table of prime numbers}
+  spec.description   = %q{Command line program that prints out a table of primes with each cell containing the product of the primes.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
