@@ -14,22 +14,44 @@ module PrimeTime
     end
 
     def to_s
-      String.new.tap do |table_string|
+      String.new.tap { |table_string|
         table_string << col_header_string
-        
+
         self.rows.each_with_index do |r, i|
           table_string << row_string(r, i)
         end
-      end.strip
+      }.to_s.strip
     end
 
     private
     def col_header_string
-      "x #{self.col_headers.join(' ')}\n"
+      s = self.col_headers.collect do |header|
+        header.to_s.rjust(padding_value)
+      end
+
+      "x #{s.join(' ')}\n"
     end
 
     def row_string(row, index)
-      "#{self.row_headers[index]} #{row.join(' ')}\n"
+      row_header = self.row_headers[index]
+      s = row.collect do |cell|
+        cell.to_s.rjust(padding_value)
+      end
+
+      "#{row_header} #{s.join(' ')}\n"
+    end
+
+    def max_value
+      result = nil
+      self.rows.each do |row|
+        max_value_in_row = row.map(&:to_i).sort.last
+        result = max_value_in_row if result.nil? || max_value_in_row > result
+      end
+      result
+    end
+
+    def padding_value
+      max_value.to_s.size
     end
 
   end
