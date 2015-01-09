@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PrimeTime::Table do
 
   describe "#initialize" do
-    it "creates a table instance" do
+    it "creates a Table instance" do
       expect(PrimeTime::Table.new).to be_a PrimeTime::Table
     end
   end
