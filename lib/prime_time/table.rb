@@ -26,22 +26,23 @@ module PrimeTime
     private
     def col_header_string
       s = self.col_headers.collect do |header|
-        header.to_s.rjust(padding_value)
+        header.to_s.rjust(cell_padding_value)
       end
 
-      "x #{s.join(' ')}\n"
+      corner = 'x'.ljust(row_header_padding_vale)
+      "#{corner} #{s.join(' ')}\n"
     end
 
     def row_string(row, index)
       row_header = self.row_headers[index]
       s = row.collect do |cell|
-        cell.to_s.rjust(padding_value)
+        cell.to_s.rjust(cell_padding_value)
       end
 
-      "#{row_header} #{s.join(' ')}\n"
+      "#{row_header.to_s.ljust(row_header_padding_vale)} #{s.join(' ')}\n"
     end
 
-    def max_value
+    def max_cell_value
       result = nil
       self.rows.each do |row|
         max_value_in_row = row.map(&:to_i).sort.last
@@ -50,8 +51,16 @@ module PrimeTime
       result
     end
 
-    def padding_value
-      max_value.to_s.size
+    def max_row_header_value
+      self.row_headers.map(&:to_i).sort.last
+    end
+
+    def cell_padding_value
+      max_cell_value.to_s.size
+    end
+
+    def row_header_padding_vale
+      max_row_header_value.to_s.size
     end
 
   end
