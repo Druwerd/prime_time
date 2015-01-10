@@ -22,10 +22,29 @@ describe PrimeTime::Calculate do
       expect(PrimeTime::Calculate.is_prime?(349)).to be true
       expect(PrimeTime::Calculate.is_prime?(409)).to be true
       expect(PrimeTime::Calculate.is_prime?(7919)).to be true
+      expect(PrimeTime::Calculate.is_prime?(99971)).to be true
+      expect(PrimeTime::Calculate.is_prime?(104729)).to be true
     end
 
     it "can detect if a number is not prime" do
-
+      expect(PrimeTime::Calculate.is_prime?(-7919)).to be false
+      expect(PrimeTime::Calculate.is_prime?(-1009)).to be false
+      expect(PrimeTime::Calculate.is_prime?(-3)).to be false
+      expect(PrimeTime::Calculate.is_prime?(-2)).to be false
+      expect(PrimeTime::Calculate.is_prime?(-1)).to be false
+      expect(PrimeTime::Calculate.is_prime?(0)).to be false
+      expect(PrimeTime::Calculate.is_prime?(1)).to be false
+      expect(PrimeTime::Calculate.is_prime?(4)).to be false
+      expect(PrimeTime::Calculate.is_prime?(10)).to be false
+      expect(PrimeTime::Calculate.is_prime?(49)).to be false
+      expect(PrimeTime::Calculate.is_prime?(50)).to be false
+      expect(PrimeTime::Calculate.is_prime?(100)).to be false
+      expect(PrimeTime::Calculate.is_prime?(121)).to be false
+      expect(PrimeTime::Calculate.is_prime?(169)).to be false
+      expect(PrimeTime::Calculate.is_prime?(534535)).to be false
+      expect(PrimeTime::Calculate.is_prime?(3424235)).to be false
+      expect(PrimeTime::Calculate.is_prime?(23434349)).to be false
+      expect(PrimeTime::Calculate.is_prime?(100000001)).to be false
     end
   end
 
