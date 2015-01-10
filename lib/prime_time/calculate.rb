@@ -3,7 +3,15 @@ module PrimeTime
 
     class << self
       def primes(n)
-
+        result = []
+        i = 2
+        
+        while result.size < n do
+          result << i if is_prime?(i)
+          (i % 2 == 0)? i += 1 : i += 2
+        end
+        
+        result
       end
 
       # worst case O(sqrt(n)/2)
