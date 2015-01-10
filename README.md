@@ -1,6 +1,7 @@
 # PrimeTime
 
 Command line program that prints out a table of primes with each cell containing the product of the primes.
+The first row and column of the table should have the primes, with each cell containing the product of the primes for the corresponding row and column.
 
 ## Installation
 
