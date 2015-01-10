@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'prime_time'
+
+if ARGV[0]
+  n = ARGV[0].to_i
+  puts PrimeTime::PrimeTable.new(n)
+else
+  puts "USAGE: #{__FILE__} [n]"
+end
