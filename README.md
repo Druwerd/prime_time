@@ -34,6 +34,38 @@ Or install it yourself as:
     23  46  69 115 161 253 299 391 437 529 667
     29  58  87 145 203 319 377 493 551 667 841
 
+## Notes
+
+### Complexity
+  The algorithm used to determine if a number is prime has a worst-case complexity of:
+
+  *O(sqrt(n)/2)*
+
+  The coplexity of building the multiplication table is:
+
+  *O(n^2)*
+
+### Runtime
+
+    $ time primetime 10
+    primetime 10  0.03s user 0.02s system 57% cpu 0.082 total
+
+    $ time primetime 20
+    primetime 20  0.05s user 0.01s system 92% cpu 0.064 total
+
+    $ time primetime 40
+    primetime 40  0.28s user 0.01s system 98% cpu 0.296 total
+
+    $ time primetime 80
+    primetime 80  2.63s user 0.04s system 99% cpu 2.677 total
+
+    $ time primetime 160
+    primetime 160  37.01s user 0.54s system 99% cpu 37.586 total
+
+    $ time primetime 320
+    primetime 320  562.49s user 13.22s system 99% cpu 9:36.11 total
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/prime_time/fork )
