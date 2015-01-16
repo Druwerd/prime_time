@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PrimeTime::PrimeTable do
 
   describe "#initialize" do
-    subject(:new_prime_table) { PrimeTime::PrimeTable.new(10)}
+    subject(:new_prime_table) { PrimeTime::PrimeTable.new(width: 10, height: 10)}
 
     it "creates a PrimeTable instance" do
       expect(new_prime_table).to be_a PrimeTime::PrimeTable
@@ -19,7 +19,7 @@ describe PrimeTime::PrimeTable do
   end
 
   context "5 by 5 PrimeTable" do
-    subject(:five_by_five_prime_table) { PrimeTime::PrimeTable.new(5) }
+    subject(:five_by_five_prime_table) { PrimeTime::PrimeTable.new(width: 5, height: 5) }
     subject(:five_by_five_prime_table_string) {
 %Q(x    2   3   5   7  11
 2    4   6  10  14  22

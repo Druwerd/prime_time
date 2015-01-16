@@ -1,17 +1,18 @@
 module PrimeTime
   class PrimeTable < Table
-    attr_accessor :primes
+    attr_accessor :col_primes, :row_primes
 
-    def initialize(n)
-      @primes = PrimeTime::Calculate.primes(n)
-      super(width: n, height: n)
+    def initialize(width: 1, height: 1)
+      @col_primes = PrimeTime::Calculate.primes(width)
+      @row_primes = PrimeTime::Calculate.primes(height)
+      super(width: width, height: height)
       build_table
     end
 
     private
     def build_table
-      self.col_headers = self.primes
-      self.row_headers = self.primes
+      self.col_headers = self.col_primes
+      self.row_headers = self.row_primes
 
       self.row_headers.each_with_index do |row_header, row_i|
         self.col_headers.each_with_index do |col_header, col_i|
