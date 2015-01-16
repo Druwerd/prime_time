@@ -5,12 +5,9 @@ module PrimeTime
     def initialize(width: 1, height: 1)
       @width = width
       @height = height
-      @col_headers = Array.new(width).fill(' ')
-      @row_headers = Array.new(height).fill(' ')
-      @rows = Array.new
-      height.times do
-        @rows << Array.new(width).fill('-')
-      end
+      @col_headers = Array.new(width){''}
+      @row_headers = Array.new(height){''}
+      @rows = Array.new(height){ Array.new(width){'-'} }
     end
 
     def to_s
