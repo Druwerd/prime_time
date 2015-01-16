@@ -34,4 +34,18 @@ describe PrimeTime::PrimeTable do
     end
 
   end
+
+  context "5 by 3 PrimeTable" do
+    subject(:five_by_three_prime_table) { PrimeTime::PrimeTable.new(width: 5, height: 3) }
+    subject(:five_by_three_prime_table_string) {
+%Q(x  2  3  5  7 11
+2  4  6 10 14 22
+3  6  9 15 21 33
+5 10 15 25 35 55)
+    }
+
+    it "prints to STDOUT" do
+      expect(five_by_three_prime_table.to_s).to eq(five_by_three_prime_table_string)
+    end
+  end
 end
