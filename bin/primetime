@@ -4,7 +4,7 @@ require 'prime_time'
 
 if ARGV[0]
   n = ARGV[0].to_i
-  puts PrimeTime::PrimeTable.new(n)
+  puts PrimeTime::PrimeTable.new(width: n, height: n)
 else
   puts "USAGE: #{File.basename __FILE__} [n]"
 end
