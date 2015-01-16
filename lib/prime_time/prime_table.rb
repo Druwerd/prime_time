@@ -2,15 +2,15 @@ module PrimeTime
   class PrimeTable < Table
     attr_accessor :col_primes, :row_primes
 
-    def initialize(width: 1, height: 1)
+    private
+    def post_initialize
       @col_primes = PrimeTime::Calculate.primes(width)
       @row_primes = PrimeTime::Calculate.primes(height)
-      super(width: width, height: height)
-      build_table
+
+      populate_table
     end
 
-    private
-    def build_table
+    def populate_table
       self.col_headers = self.col_primes
       self.row_headers = self.row_primes
 
@@ -20,5 +20,6 @@ module PrimeTime
         end
       end
     end
+    
   end
 end

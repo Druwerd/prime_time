@@ -8,6 +8,7 @@ module PrimeTime
       @col_headers = Array.new(width){''}
       @row_headers = Array.new(height){''}
       @rows = Array.new(height){ Array.new(width){'-'} }
+      post_initialize
     end
 
     def to_s
@@ -21,6 +22,10 @@ module PrimeTime
     end
 
     private
+    def post_initialize
+      nil
+    end
+
     def col_header_string
       s = self.col_headers.collect do |header|
         header.to_s.rjust(cell_padding_value)
